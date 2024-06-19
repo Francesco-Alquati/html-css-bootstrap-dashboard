@@ -19,19 +19,29 @@
                                 <div class="container">
                                     <a class="navbar-brand" href="#">
                                         <img src="./img/mobile-logo.png" alt="Logo" width="55" height="50" class="d-inline-block align-text-top d-xl-none">
-                                        <img src="./img/logo.svg" alt="" class="d-xl-block align-text-top d-none">
+                                        <img src="./img/logo.svg" alt="" class="d-xl-block align-text-top d-none w-2">
                                     </a>
-                                    <div class="input-group">
-                                        <span class="input-group-text b-none"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                        <div class="form-floating">
-                                          <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
-                                          <label class="text-secondary" for="floatingInputGroup1">Prova a cercare: Lezioni di Laravel</label>
-                                        </div>
-                                    </div>
+                                    <nav class="navbar bg-body-tertiary w-100">
+                                        <form class="container-fluid">
+                                          <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                            <input type="text" class="form-control" placeholder="Prova a cercare:Lezioni di Laravel" aria-label="Username" aria-describedby="basic-addon1">
+                                          </div>
+                                        </form>
+                                      </nav>
                                     <span class="d-none d-xl-block ms-5"><i class="fa-solid fa-list"></i></span>
                                     <span class="d-none d-xl-block ms-4"><i class="fa-solid fa-circle-question"></i></span>
                                     <span class="d-none d-xl-block ms-4"><i class="fa-solid fa-ellipsis-vertical"></i></span>
-                                    <span><i class="fa-solid fa-bell ms-4"></i></span>
+                                    <div class="dropdown">
+                                        <div data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span><i class="fa-solid fa-bell text-warning ms-4"></i></span>
+                                        </div>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                          <li><a class="dropdown-item" href="#">Profilo</a></li>
+                                          <li><a class="dropdown-item" href="#">Fatturazione</a></li>
+                                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                                        </ul>
+                                      </div>
                                 </div>
                             </nav>
                         </div>
@@ -46,14 +56,14 @@
                 <div class="row ">
                     <div class="col-12">
                         <div class="content-sidebar mt-4">
-                            <span><i class="fa-solid fa-house fa-lg mb-4"></i><span class="d-none d-xl-inline ms-4">Home</span></span>
-                            <span><i class="fa-solid fa-chart-simple fa-lg mb-4"></i><span class="d-none d-xl-inline ms-4">Stats</span></span>
-                            <span><i class="fa-solid fa-signal fa-lg mb-4"></i><span class="d-none d-xl-inline ms-4">Signal</span></span>
+                            <span><i class="fa-solid fa-house fa-lg mb-4"></i><span class="d-none d-xl-inline ms-3">Home</span></span>
+                            <span><i class="fa-solid fa-chart-simple fa-lg mb-4"></i><span class="d-none d-xl-inline ms-3">Stats</span></span>
+                            <span><i class="fa-solid fa-signal fa-lg mb-4"></i><span class="d-none d-xl-inline ms-3">Signal</span></span>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="content-sidebar">
-                            <span><i class="fa-solid fa-gear fa-lg"></i><span class="d-none d-xl-inline ms-4">Admin</span></span>
+                            <span><i class="fa-solid fa-gear fa-lg"></i><span class="d-none d-xl-inline ms-3">Admin</span></span>
                         </div>
                     </div>
                 </div>
@@ -65,7 +75,11 @@
                     <div class="row text-white">
                         <div class="col-12 col-md-4 col-xl-3 order-sm-1">
                             <div id="new-student" class="content py-3 fs-8">
-                                <span>Nuovo studente <button type="button" class="btn btn-outline-light"><i class="fa-solid fa-plus"></i></button></span>
+                                <span>Nuovo studente 
+                                    <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </span>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-xl-6">
@@ -103,66 +117,81 @@
                                         <h4>Prossime classi</h4>
                                     </div>
                                     <div class="card-body">
-                                        <table class="table">
+                                        <table class="table table-sm">
                                             <thead>
                                               <tr>
-                                                <th colspan="3" scope="col">Name</th>
-                                                <th scope="col">Stato</th>
-                                                <th scope="col">Azioni</th>
+                                                <td class="fs-8" colspan="9" scope="col">Name</td>
+                                                <td class="fs-8 d-none d-xl-table-cell" scope="col">Data inizio</td>
+                                                <td class="fs-8 d-none d-xl-table-cell" scope="col">Roi</td>
+                                                <td class="fs-8" scope="col">Stato</td>
+                                                <td class="fs-8" scope="col">Azioni</td>
                                               </tr>
                                             </thead>
                                             <tbody>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 75</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 75</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">15 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-success fs-05 px-2 py-0">Done</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 76</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 76</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">16 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-success fs-05 px-2 py-0">Done</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 77</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 77</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">17 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-warning text-white fs-05 px-2 py-0">Process</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 78</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 78</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">18 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-success fs-05 px-2 py-0">Done</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 79</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 79</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">19 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-danger fs-05 px-2 py-0">failed</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 80</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 80</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-success fs-05 px-2 py-0">Done</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 81</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 81</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">21 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-danger fs-05 px-2 py-0">failed</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
                                               <tr>
-                                                <th scope="row"><img src="./img/class-avatar.jpg" alt=""></th>
-                                                <td colspan="2">Classe 82</td>
-                                                <td><button type="button" class="btn btn-success fs-8 px-2 py-0">Done</button></td>
-                                                <td><button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-8 p-xy"><i class="fa-solid fa-trash"></i></button></td>
+                                                <td scope="row"><img src="./img/class-avatar.jpg" alt=""><span class="fs-8 ms-2"> Classe 82</span></td>
+                                                <td colspan="8"></td>
+                                                <td class="fs-06 d-xl-table-cell d-none">22 Feb 2021</td>
+                                                <td class="fs-06 d-xl-table-cell d-none">20%</td>
+                                                <td><button type="button" class="btn btn-success fs-05 px-2 py-0">Done</button></td>
+                                                <td><button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-pen"></i></button> <button type="button" class="btn btn-outline-secondary fs-05 my-button"><i class="fa-solid fa-trash"></i></button></td>
                                               </tr>
-                                              
-                                              
-                                              
                                             </tbody>
                                           </table>
                                     </div>
@@ -180,7 +209,7 @@
                                                 </button>
                                               </h2>
                                               <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                                <div class="accordion-body">Clicca sul + in alto nella sezione blu".</div>
                                               </div>
                                             </div>
                                             <div class="accordion-item">
@@ -190,7 +219,7 @@
                                                 </button>
                                               </h2>
                                               <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                                                <div class="accordion-body">Clicca sull'icona della campanella.</div>
                                               </div>
                                             </div>
                                             <div class="accordion-item">
@@ -200,7 +229,7 @@
                                                 </button>
                                               </h2>
                                               <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                                                <div class="accordion-body">Si.</div>
                                               </div>
                                             </div>
                                           </div>
@@ -243,10 +272,14 @@
                                     <div class="card-body">
                                         <div class="card">
                                             <ul class="list-group list-group-flush">
-                                              <li class="list-group-item"><img src="./img/stats.jpeg" alt=""> </li>
-                                              <li class="list-group-item">A second item</li>
-                                              <li class="list-group-item">A third item</li>
+                                              <li class="list-group-item"><img src="./img/stats.jpeg" alt=""><h5>Utenti attivi</h5><div class="fs-8">Lista degli utenti attivi in piattaforma nell'ultimo mese</div></li>
+                                              <li class="list-group-item fs-8">Gennaio: 1200</li>
+                                              <li class="list-group-item fs-8">Febbraio: 800</li>
+                                              <li class="list-group-item fs-8">Marzo: 1500</li>
                                             </ul>
+                                            <div class="card-footer">
+                                                <a href="#" class="card-link">Visualizza report approfondito</a>
+                                              </div>
                                         </div>
                                     </div>
                                 </div>
@@ -258,9 +291,75 @@
 
         </div>
     </div>
-   
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Inserisci un nuovo studente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <form class="row g-3">
+                <div class="col-12 col-xl-6">
+                  <label for="validationDefault01" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="validationDefault01" required>
+                </div>
+                <div class="col-12 col-xl-6">
+                  <label for="validationDefault02" class="form-label">Cognome</label>
+                  <input type="text" class="form-control" id="validationDefault02" required>
+                </div>
+                <div class="col-12 col-xl-6">
+                  <label for="validationDefaultUsername" class="form-label">Email</label>
+                  <div class="input-group">
+                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                    <input type="email" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                  </div>
+                </div>
+                <div class="col-12 col-xl-6">
+                  <label for="validationDefault03" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="validationDefault03" required>
+                </div>
+                <div class="col-12 col-xl-12">
+                  <label for="validationDefault01" class="form-label">Indirizzo</label>
+                  <input type="text" class="form-control" id="validationDefault01" required>
+                </div>
+                <div class="col-12 col-xl-6">
+                    <label for="validationDefault02" class="form-label">Città</label>
+                    <input type="text" class="form-control" id="validationDefault02" required>
+                </div>
+                <div class="col-12 col-xl-4">
+                  <label for="validationDefault04" class="form-label">Stato</label>
+                  <select class="form-select" id="validationDefault04" required>
+                    <option selected disabled value="">Scegli...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-12 col-xl-2">
+                  <label for="validationDefault05" class="form-label">CAP</label>
+                  <input type="number" class="form-control" id="validationDefault05" required>
+                </div>
+                <div class="col-12 col-xl-12">
+                    <label for="validationDefault05" class="form-label">Foto</label>
+                  <input type="file" class="form-control" aria-label="file example" required>
+                  <div class="invalid-feedback">Example invalid form file feedback</div>
+                </div>
+                <div class="col-12 col-xl-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Seleziona per proseguire
+                    </label>
+                  </div>
+                </div>
+                <div class="col-1 col-xl-1">
+                  <button class="btn btn-primary" type="submit">Salva</button>
+                </div>
+                <div class="col-1 col-xl-1 ms-3">
+                    <button class="btn btn-warning" type="submit">Svuota</button>
+                  </div>
+              </form>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
