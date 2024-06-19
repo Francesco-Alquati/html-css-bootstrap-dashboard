@@ -7,27 +7,24 @@ body{
     font-family: Arial,sans-serif;
 }
 
+/* id  */
 #main{
-    width: calc(100vw - 100px);
+    width: calc(100vw - 80px);
     height: calc(100vh - 80px);
-    background-color: green;
 }
-
-
 #sidebar{
-    width: 100px;
+    width: 80px;
     height: calc(100vh - 80px);
     background-image: url('../img/sidebar-bg.png');
     background-color: rgba(0, 0, 28, 0.901);
 }
-
 #bottom{
     display: flex;
 }
 
+/* content  */
 .content-header{
     height: 80px;
-    background-color: red;
     display: flex;
     align-items: center;
 }
@@ -35,13 +32,39 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 25px;
     color: white;
-    margin-top: 25px;
 }
-.content-top-main{
+.top-main{
     height: 250px;
 }
-.content-bottom-main{
+.bottom-main{
     height: calc(100vh - 330px);
+    overflow: auto;
+}
+
+/* classi composte  */
+.card img{
+    width: 100%;
+}
+.card table img{
+    width: 20px;
+    border-radius: 50%;
+}
+
+
+
+@media screen and (min-width: 1200px){
+    #sidebar{
+        width: 150px;
+    }
+    #main{
+        width: calc(100% - 150px);
+    }
+    .top-main{
+        height: 100px;
+    }
+    .bottom-main{
+        height: calc(100vh - 180px);
+        overflow: hidden;
+    }
 }
