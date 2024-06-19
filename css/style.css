@@ -21,7 +21,13 @@ body{
 #bottom{
     display: flex;
 }
-
+.top-main{
+    height: 270px;
+}
+.bottom-main{
+    height: calc(100vh - 350px);
+    overflow: auto;
+}
 /* content  */
 .content-header{
     height: 80px;
@@ -34,13 +40,7 @@ body{
     text-align: center;
     color: white;
 }
-.top-main{
-    height: 250px;
-}
-.bottom-main{
-    height: calc(100vh - 330px);
-    overflow: auto;
-}
+
 
 /* classi composte  */
 .card img{
@@ -50,9 +50,21 @@ body{
     width: 20px;
     border-radius: 50%;
 }
+.fs-8{
+    font-size: 0.8rem;
+}
 
 
 
+@media screen and (min-width: 768px){
+    .top-main{
+        height: 120px;
+    }
+    .bottom-main{
+        height: calc(100vh - 200px);
+    }
+
+}
 @media screen and (min-width: 1200px){
     #sidebar{
         width: 150px;
@@ -64,7 +76,10 @@ body{
         height: 100px;
     }
     .bottom-main{
-        height: calc(100vh - 180px);
+        height: calc(100vh - 150px);
         overflow: hidden;
+    }
+    #new-student{
+        text-align: end;
     }
 }

@@ -18,7 +18,7 @@
                             <nav class="navbar bg-body-tertiary w-100 flex-nowrap p-0">
                                 <div class="container">
                                     <a class="navbar-brand" href="#">
-                                        <img src="./img/mobile-logo.png" alt="Logo" width="55" height="50" class="d-inline-block align-text-top d-lg-none">
+                                        <img src="./img/mobile-logo.png" alt="Logo" width="55" height="50" class="d-inline-block align-text-top d-xl-none">
                                         <img src="./img/logo.svg" alt="" class="d-xl-block align-text-top d-none">
                                     </a>
                                     <div class="input-group">
@@ -61,28 +61,46 @@
         </div>
         <div id="main">
             <div class="top-main bg-primary">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-12"></div>
-                                    <div class="col-12"></div>
-                                    <div class="col-12"></div>
+                <div class="container-fluid">
+                    <div class="row text-white">
+                        <div class="col-12 col-md-4 col-xl-3 order-sm-1">
+                            <div id="new-student" class="content py-3 fs-8">
+                                <span>Nuovo studente <button type="button" class="btn btn-outline-light"><i class="fa-solid fa-plus"></i></button></span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-xl-6">
+                            <div class="content py-4">
+                                <div>
+                                    <h4 class="d-inline">Boolean</h4>
+                                    <a href="#" class="btn btn-primary active rounded-pill fs-8 px-2 py-0 ms-2" role="button" data-bs-toggle="button" aria-pressed="true">Piano blaze</a>
                                 </div>
+                                <div class="mt-2">
+                                    <a href="#" class="btn btn-primary active rounded-pill fs-8 px-2 py-0" role="button" data-bs-toggle="button" aria-pressed="true">3 app</a>
+                                    <i class="fa-solid fa-angles-right fa-xs"></i>
+                                    <a href="#" class="btn btn-primary active rounded-pill fs-8 px-2 py-0 d-none d-xl-inline-block" role="button" data-bs-toggle="button" aria-pressed="true">Boolean mobile app</a>
+                                    <a href="#" class="btn btn-primary active rounded-pill fs-8 px-2 py-0 d-none d-xl-inline-block" role="button" data-bs-toggle="button" aria-pressed="true">Boolean web app</a>
+                                    <a href="#" class="btn btn-primary active rounded-pill fs-8 px-2 py-0 d-none d-xl-inline-block" role="button" data-bs-toggle="button" aria-pressed="true">Boolean blog app</a>
+                                    <a href="#" class="btn btn-primary active rounded-pill fs-8 px-2 py-0 d-xl-none" role="button" data-bs-toggle="button" aria-pressed="true">+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-xl-3">
+                            <div class="content py-4 fs-8">
+                                <div>Studenti online negli ultimi 30 minuti</div>
+                                <h3 class="mt-2">125</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottom-main  bg-white">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-xl-8">
                             <div class="content">
                                 <div class="card mt-4">
                                     <div class="card-header">
-                                        <h2>prossime classi</h2>
+                                        <h4>Prossime classi</h4>
                                     </div>
                                     <div class="card-body">
                                         <table class="table">
@@ -123,7 +141,7 @@
                                 </div>
                                 <div class="card mt-4">
                                     <div class="card-header">
-                                    <h2>F.A.Q</h2>
+                                    <h4>F.A.Q</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -166,18 +184,42 @@
                             <div class="content">
                                 <div class="card mt-4">
                                     <div class="card-header">
-                                    <h2>To Do</h2>
+                                    <h4>Todo</h4>
                                     </div>
                                     <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <div class="card fs-6">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label fs-8" for="defaultCheck1">Default checkbox</label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label fs-8" for="defaultCheck1">Default checkbox</label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label fs-8" for="defaultCheck1">Default checkbox</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                          </div>
                                     </div>
                                 </div>
-                                <div class="card my-4">
-                                    <div class="card-header"></div>
+                                <div class="card mt-2 mb-5">
                                     <div class="card-body">
-                                    <img src="./img/stats.jpeg" alt="">
+                                        <div class="card">
+                                            <ul class="list-group list-group-flush">
+                                              <li class="list-group-item"><img src="./img/stats.jpeg" alt=""> </li>
+                                              <li class="list-group-item">A second item</li>
+                                              <li class="list-group-item">A third item</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
